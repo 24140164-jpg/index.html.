@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+
+<html lang="es">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Creative Agency</title>
+
+
+    <style>
+
+
+        /* Estilos CSS para simular el diseño */
+
+
+        body {
+
+
+            font-family: sans-serif; /* Una fuente genérica, el diseño usa una sans-serif moderna */
+
+
+            margin: 0;
+
+
+            padding: 0;
+
+
+            background-color: #f0f0f0; /* Fondo gris claro para el entorno, el contenido es oscuro */
+
+
+        }
+
+
+        .container {
+
+
+            width: 100%;
+
+
+            max-width: 1200px; /* Ancho máximo típico para un diseño web */
+
+
+            margin: 0 auto;
+
+
+            background-color: #07054a; /* Color de fondo oscuro, similar al de la imagen */
+
+
+            color: white;
+
+
+            padding: 20px;
+
+
+            box-sizing: border-box;
+
+
+            position: relative; /* Necesario para posicionar los elementos abstractos si los agregáramos */
+
+
+            min-height: 600px; /* Altura mínima para que se vea bien */
+
+
+        }
+         .card img {
+            width: 80px;
+            height: 80px;
+        }
+
+
+
+
+
+
+
+
+        /* Navegación (Header) */
+
+
+        header {
+
+
+            display: flex;
+
+
+            justify-content: space-between;
+
+
+            align-items: center;
+
+
+            padding: 10px 0;
+
+
+        }
+
+
+        .logo {
+
+
+            font-size: 1.5em;
+
+
+            font-weight: bold;
+
+
+            display: flex;
+
+
+            align-items: center;
+
+
+        }
+
+
+        .logo::before {
+
+
+            content: '☐'; /* Simula el ícono del logo */
+
+
+            margin-right: 8px;
+
+
+            font-size: 1.2em;
+
+
+        }
+
+
+        nav a {
+
+
+            color: white;
+
+
+            text-decoration: none;
+
+
+            margin-left: 25px;
+
+
+            font-size: 0.9em;
+
+
+            opacity: 0.8;
+
+
+        }
+
+
+        nav a:hover {
+
+
+            opacity: 1;
+
+
+        }
+
+
+        /* Contenido Principal (Hero Section) */
+
+
+        .hero-content {
+
+
+            padding: 100px 0;
+
+
+            max-width: 50%; /* El texto ocupa la mitad izquierda */
+
+
+        }
+
+
+        h1 {
+
+
+            font-size: 3em;
+
+
+            margin-bottom: 15px;
+
+
+            line-height: 1.1;
+
+
+        }
+
+
+        .hero-content p {
+
+
+            font-size: 1.1em;
+
+
+            margin-bottom: 30px;
+
+
+            opacity: 0.7;
+
+
+        }
+
+
+        /* Búsqueda y Botones */
+
+
+        .search-bar {
+
+
+            margin-bottom: 20px;
+
+
+        }
+
+
+        .search-input {
+
+
+            padding: 12px 15px;
+
+
+            width: 100%;
+
+
+            border: none;
+
+
+            border-radius: 4px;
+
+
+            box-sizing: border-box;
+
+
+            color: #333;
+
+
+        }
+
+
+       
+
+
+        .search-container {
+
+
+            position: relative;
+
+
+            width: 100%;
+
+
+            max-width: 400px; /* Ajuste para que no sea demasiado ancho */
+
+
+            margin-bottom: 20px;
+
+
+        }
+
+
+        .search-container .search-input {
+
+
+            padding-right: 40px; /* Espacio para el ícono de lupa */
+
+
+        }
+
+
+        .search-container .search-icon {
+
+
+            position: absolute;
+
+
+            right: 15px;
+
+
+            top: 50%;
+
+
+            transform: translateY(-50%);
+
+
+            color: #aaa;
+
+
+            cursor: pointer;
+
+
+        }
+
+
+        /* Botones */
+
+
+        .buttons button {
+
+
+            padding: 12px 25px;
+
+
+            border: none;
+
+
+            border-radius: 4px;
+
+
+            cursor: pointer;
+
+
+            font-weight: bold;
+
+
+            font-size: 1em;
+
+
+        }
+
+
+        .btn-signin {
+
+
+            background-color: #007BFF; /* Azul brillante */
+
+
+            color: white;
+
+
+            margin-right: 15px;
+
+
+        }
+
+
+        .btn-signup {
+
+
+            background-color: white;
+
+
+            color: #1A1A33; /* Color del fondo oscuro */
+
+
+        }
+
+
+        /* Nota sobre las formas abstractas:
+
+
+           Estas formas de colores vibrantes (bluish, green, magenta) son ilustraciones complejas.
+
+
+           En HTML/CSS puro, se harían con imágenes de fondo o SVG, pero aquí solo se indica su posición.
+
+
+        */
+
+
+        .abstract-art {
+
+
+            position: absolute;
+
+
+            right: 0;
+
+
+            top: 0;
+
+
+            width: 50%;
+
+
+            height: 100%;
+
+
+            /* En un sitio real, aquí iría una imagen de fondo o SVG */
+
+
+            background: radial-gradient(circle at 70% 50%, rgba(100, 255, 255, 0.3) 0%, transparent 40%),
+
+
+                        radial-gradient(circle at 80% 80%, rgba(255, 0, 150, 0.3) 0%, transparent 50%),
+
+
+                        radial-gradient(circle at 30% 70%, rgba(150, 255, 0, 0.3) 0%, transparent 40%);
+
+
+            opacity: 0.8;
+
+
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+
+    <div class="container">
+
+
+
+
+        <div clas="card img">
+<img  src="mapa empleo+.png" alt="">
+       
+        <!-- Simulación de las formas abstractas de colores en el lado derecho -->
+
+
+        <div class="abstract-art"></div>
+
+
+        <header>
+
+
+            <div class="logo">Empleo +</div>
+
+
+            <nav>
+
+
+                <a href="#">Inicio</a>
+
+
+                <a href="#">Prestaciones</a>
+
+
+                <a href="#"></a>Perfil</a>
+
+
+            </nav>
+
+
+        </header>
+
+
+        <div class="hero-content">
+
+
+            <h1>Bienvenido a Empleo+</h1>
+
+
+            <p>Encuentra los mejores trabajos cerca de tu hogar y el mejor empleo para tu vida laboral.</p>
+
+
+            <div class="search-container">
+
+
+                <input type="text" class="search-input" placeholder="Indica tu ubicacion y empezaremos...">
+
+
+                <span class="search-icon">&#9906;</span> <!-- Símbolo de lupa (puede variar) -->
+
+
+            </div>
+
+
+            <div class="buttons">
+
+
+                <button class="btn-signin">Buscar</button>
+
+
+                <button class="btn-signup">Cancelar</button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+
+</html>

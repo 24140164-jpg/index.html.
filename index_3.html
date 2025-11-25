@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Empleo +</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            background-color: #000; /* Fondo negro para simular el entorno de la imagen */
+
+        }
+
+        .laptop-screen {
+
+            width: 800px; /* Tamaño simulado de la pantalla de la laptop */
+
+            height: 500px; /* Altura simulada de la pantalla de la laptop */
+
+            margin: 50px auto;
+
+            background-color: #fff;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+            position: relative;
+
+        }
+
+        .header-bar {
+
+            background-color: #b5eaf7;
+
+            height: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 0 10px;
+
+            border-top-left-radius: 10px;
+
+            border-top-right-radius: 10px;
+
+            font-size: 12px;
+
+            color: #555;
+
+        }
+
+        .window-controls {
+
+            display: flex;
+
+            gap: 8px;
+
+        }
+
+        .control-dot {
+
+            width: 10px;
+
+            height: 10px;
+
+            border-radius: 50%;
+
+        }
+
+        .close { background-color: #e4e4e4; }
+
+        .minimize { background-color: #4175ec; }
+
+        .maximize { background-color: #4bc3e5; }
+
+        .menu-items {
+
+            display: flex;
+
+            margin-left: 20px;
+
+            gap: 20px;
+
+        }
+
+        .menu-items a {
+
+            text-decoration: none;
+
+            color: #493d69;
+
+        }
+
+        .top-right-icons {
+
+            margin-left: auto;
+
+            display: flex;
+
+            gap: 15px;
+
+            align-items: center;
+
+        }
+
+        /* Contenido principal de la web */
+
+        .main-content {
+
+            position: relative;
+
+            height: 100%;
+
+        }
+
+        .background-image {
+
+            width: 100%;
+
+            height: 100%;
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-color: #ffffff;
+           
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+        }
+
+        .overlay {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-color: rgba(0, 50, 50, 0.4); /* Capa semitransparente para mejorar el contraste del texto */
+
+        }
+
+        .navbar {
+
+            position: absolute;
+
+            top: 22px;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 40px;
+
+            background-color: rgba(35, 14, 231, 0.8); /* Color verde azulado semitransparente */
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 0 20px;
+
+            box-sizing: border-box;
+
+        }
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            margin-right: 40px;
+
+        }
+
+        .logo span {
+
+            font-size: 24px;
+
+            margin-right: 5px;
+
+        }
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            margin: 0 15px;
+
+            font-size: 14px;
+
+            padding: 5px 10px;
+
+            transition: background-color 0.3s;
+
+        }
+
+        .nav-links a:hover {
+
+            background-color: rgba(49, 117, 196, 0.2);
+
+        }
+
+        .menu-icon {
+
+            margin-left: auto;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+        }
+
+        /* Sección principal de bienvenida */
+
+        .hero-section {
+
+            position: absolute;
+
+            top: 100px;
+
+            left: 0;
+
+            width: 100%;
+
+            text-align: center;
+
+            color: white;
+
+            z-index: 10;
+
+        }
+
+        .hero-section h2 {
+
+            font-size: 18px;
+
+            margin-bottom: 5px;
+
+        }
+
+        .hero-section h1 {
+
+            font-size: 40px;
+
+            margin: 0 0 10px 0;
+
+            line-height: 1.1;
+
+        }
+
+        .hero-section p {
+
+            font-size: 16px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .contact-button {
+
+            background-color: transparent;
+
+            border: 2px solid white;
+
+            color: white;
+
+            padding: 8px 20px;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+        }
+
+        .man-image {
+
+            position: absolute;
+
+            bottom: 0;
+
+            right: 15%; /* Ajustado para simular la posición */
+
+            width: 200px; /* Tamaño simulado */
+
+            height: auto;
+
+            z-index: 5;
+
+        }
+
+        .man-image img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+        }
+
+        /* Sección de servicios */
+
+        .services-section {
+
+            position: absolute;
+
+            bottom: 50px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 90%;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            gap: 20px;
+
+            z-index: 10;
+
+        }
+
+        .service-card {
+
+            background-color: rgb(255, 255, 255);
+
+            border-radius: 10px;
+
+            padding: 20px;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            flex: 1;
+
+            text-align: center;
+
+        }
+
+        .apostillas-card {
+
+             background-color: rgb(255, 255, 255);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+            color: rgb(0, 0, 0);
+
+        }
+
+        .service-card h3 {
+
+            margin-top: 0;
+
+            font-size: 18px;
+
+        }
+
+        .service-card p {
+
+            font-size: 12px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .service-card .ver-mas-btn {
+
+            background-color: #3e47f5; /* Verde oscuro para botones */
+
+            color: white;
+
+            border: none;
+
+            padding: 8px 15px;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            text-decoration: none;
+
+            display: inline-block;
+
+        }
+
+        .apostillas-card .ver-mas-btn {
+
+            background-color:  #3e47f5; /* Verde oscuro para botones */
+;
+
+            color: 
+            #ffffff;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="laptop-screen">
+
+        <!-- Barra superior del sistema operativo (Simulación) -->
+
+        <div class="header-bar">
+
+            <div class="window-controls">
+
+                <div class="control-dot close"></div>
+
+                <div class="control-dot minimize"></div>
+
+                <div class="control-dot maximize"></div>
+
+            </div>
+
+            <div class="menu-items">
+
+                <span>Empleo</span>
+
+                <span>Ubicacion</span>
+
+                <span>Prestamos</span>
+
+                <span>Empresas</span>
+
+                
+                <span>Ayuda</span>
+
+            </div>
+
+            <div class="top-right-icons">
+
+                <span style="font-size: 10px;">&#9733;</span> <!-- Icono de búsqueda simulado -->
+
+                
+            </div>
+
+        </div>
+
+        <div class="main-content">
+
+            <!-- Fondo simulado -->
+
+            <div class="background-image"></div>
+
+            <div class="overlay"></div>
+
+            <!-- Barra de Navegación -->
+
+            <div class="navbar">
+
+                <div class="logo">
+
+                    <span style="font-size: 20px;">&#127760;</span> <!-- Icono de globo simulado -->
+
+                    Empleo+
+
+                </div>
+
+                <div class="nav-links">
+
+                    <a href="#">Inicio</a>
+
+                    <a href="#">Prestaciones</a>
+
+                    <a href="#">Tu ubicacion</a>
+
+                    <a href="#">Curriculum</a>
+
+                    <a href="#">Trabajo</a>
+
+                </div>
+
+                <div class="menu-icon">&#9776;</div> <!-- Icono de menú hamburguesa -->
+
+            </div>
+
+            <!-- Sección Hero -->
+
+            <div class="hero-section">
+
+                <h2>Bienvenido a Empleo+</h2>
+
+                <h1>Opciones para cambiar tu vida</h1>
+
+                <p></p>
+
+                <a href="#" class="contact-button">Hablanos</a>
+
+            </div>
+
+            <!-- Imagen del hombre (Simulación) -->
+
+            <div class="man-image">
+
+                <!-- Usamos un div con un color para simular la silueta/imagen del hombre -->
+
+                <div style="width: 100%; height: 300px; background-color: #39a878; opacity: 0.9; border-radius: 10px 10px 0 0;">
+
+                    <!-- En una web real, aquí iría un <img> -->
+
+                    <p style="color: white; text-align: center; padding-top: 100px;">[Imagen del Notario]</p>
+
+                </div>
+
+            </div>
+
+            <!-- Sección de Servicios -->
+
+            <div class="services-section">
+
+                <div class="service-card apostillas-card">
+
+                    <h3>Curriculum</h3>
+
+                    <p>Tu curriculum y la forma de cambiar tu vida laboral empiezan aqui dandote lo mejor para ti.</p>
+
+                    <a href="#" class="ver-mas-btn">Ver más</a>
+
+                </div>
+
+                <div class="service-card">
+
+                    <h3>Prestaciones</h3>
+
+                    <p>Empieza tu vida laboral con un prestamo sin intereses y te ayudaremos a comenzar.</p>
+
+                    <a href="#" class="ver-mas-btn">Ver más</a>
+
+                </div>
+
+                <div class="service-card">
+
+                    <h3>Tu trabajo</h3>
+
+                    <p>Aqui vas a encontar tu trabajo y tu pogreso que llevas en tu vida laboral desde empleo+.</p>
+
+                    <a href="#" class="ver-mas-btn">Ver más</a>
+
+                </div>
+
+                <div class="service-card">
+
+                    <h3>Empresas</h3>
+
+                    <p>Coloca tu curriculum y nosotros te ayudaremos a encontrar el mejor trabajo cerca de ti.</p>
+
+                    <a href="#" class="ver-mas-btn">Ver más</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
